@@ -1,0 +1,18 @@
+.horse-flex-container {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .horse-container {
+    margin-bottom: 20px; 
+  }
+  
+  .horse-container img {
+    display: block; 
+    width: 30px; 
+    margin-bottom: 5px; 
+  }
+
+  .mirror {
+    transform: scaleX(-1);
+  }

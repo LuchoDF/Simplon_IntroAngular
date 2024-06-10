@@ -1,0 +1,35 @@
+<p> Animal</p>
+<p>Animal : <b>{{ monchien.name }}</b></p>
+<p [innerHTML]="moncontenu"></p>
+<button (click)="changeText()">Change le texte</button>
+
+<button (click)="runCourse()"> Run le cours de cheval</button>
+
+<button (click)="clearWinners()">Clear list</button>
+
+<!-- @if (chiens && chiens.length > 2) {
+    <ul>
+        @for (item of chiens; track $index) {
+            <li>{{ $index }} - <b>{{ item.name }}</b></li>
+        }
+    </ul>
+} -->
+
+@if (horses) {
+<ol>
+@for (item of horses; track $index) {
+    
+    <ul>{{ $index + 1 }} - <b>{{ winners[$index]}}</b></ul>
+}
+</ol>
+}
+
+<div class="horse-flex-container">
+    @for (horse of horses; track $index) {
+        <div class="horse-container">
+            <img [ngSrc]="chevalImage" alt="{{ horse.name }}" priority width="40" height= "40" class="mirror" [style.transform]="'translateX(' + 3*horse.getPos() + 'px) scaleX(-1)'">
+            <p>{{ horse.name }} - Position: {{ horse.getPos() }}</p>
+        
+        </div>
+    }
+</div>
